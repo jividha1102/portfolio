@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jividha Gupta | Portfolio</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:white;
+color:#222;
+overflow-x:hidden;
+}
+
+/* BACKGROUND EFFECT */
+
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:400px;
+height:400px;
+border-radius:50%;
+filter:blur(120px);
+opacity:.35;
+z-index:-1;
+animation:moveGlow 18s infinite alternate;
+}
+
+body::before{
+background:#cfe8ff;
+top:-120px;
+left:-120px;
+}
+
+body::after{
+background:#e6d6ff;
+bottom:-120px;
+right:-120px;
+}
+
+@keyframes moveGlow{
+0%{transform:translate(0,0)}
+100%{transform:translate(80px,60px)}
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+nav a:hover{
+color:#0077ff;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+padding:100px 10%;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.profile{
+width:180px;
+height:180px;
+border-radius:50%;
+border:5px solid #eee;
+overflow:hidden;
+}
+
+.profile img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.typing-text{
+font-size:20px;
+margin-top:10px;
+}
+
+#typing{
+color:#0077ff;
+border-right:3px solid #0077ff;
+padding-right:5px;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+0%{border-color:transparent}
+50%{border-color:#0077ff}
+100%{border-color:transparent}
+}
+
+/* SECTION */
+
+section{
+padding:80px 10%;
+}
+
+/* SERVICES */
+
+.services{
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* WORK */
+
+.work{
+text-align:center;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.project-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.project-info{
+padding:15px;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+}
+
+/* TESTIMONIALS */
+
+.feedback{
+background:#f9f9f9;
+text-align:center;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.testimonial{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.testimonial img{
+width:60px;
+height:60px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+.stars{
+color:#f5b50a;
+margin:6px 0;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+/* ROBOT */
+
+.robot{
+position:fixed;
+bottom:25px;
+right:25px;
+width:70px;
+cursor:pointer;
+}
+
+.robot video{
+width:100%;
+border-radius:50%;
+}
+
+/* CHATBOT */
+
+.chatbot{
+position:fixed;
+bottom:110px;
+right:25px;
+width:260px;
+background:white;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+display:none;
+}
+
+.chat-body{
+padding:12px;
+max-height:200px;
+overflow:auto;
+font-size:14px;
+}
+
+.bot{
+background:#f1f1f1;
+padding:8px;
+margin:6px 0;
+border-radius:8px;
+}
+
+.user{
+background:#0077ff;
+color:white;
+padding:8px;
+margin:6px 0;
+border-radius:8px;
+text-align:right;
+}
+
+.chat-questions{
+display:flex;
+flex-direction:column;
+gap:6px;
+padding:10px;
+border-top:1px solid #eee;
+}
+
+.chat-questions button{
+padding:8px;
+border:none;
+background:#f3f3f3;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.profile{
+width:140px;
+height:140px;
+}
+
+.robot{
+width:60px;
+}
+
+.chatbot{
+width:90%;
+right:5%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h3>Jividha Gupta</h3>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#feedback">Testimonials</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero" id="home">
+
+<div class="profile">
+<img src="myself.jpg">
+</div>
+
+<div>
+<h1>Hello I'm Jividha</h1>
+
+<div class="typing-text">
+<span id="typing"></span>
+</div>
+
+</div>
+
+</section>
+
+<section class="services" id="services">
+
+<h2>My Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>AI Development</h3>
+<p>I build AI chatbots and automation tools.</p>
+</div>
+
+<div class="card">
+<h3>Frontend Development</h3>
+<p>Responsive modern websites and interfaces.</p>
+</div>
+
+<div class="card">
+<h3>Database Design</h3>
+<p>Efficient database systems for applications.</p>
+</div>
+
+<!-- <div class="card">
+<h3>Php project - Govt. </h3>
+<p>Crime Report Management System</p>
+</div> -->
+
+</div>
+
+</section>
+
+<section class="work" id="work">
+
+<h2>My Work</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<img src="img2.png">
+<div class="project-info">
+<h3>AI Interview Website</h3>
+<p>AI chatbot interview platform.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="img3.png">
+<div class="project-info">
+<h3>Business Website</h3>
+<p>Responsive client website.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="img7.png">
+<div class="project-info">
+<h3>Database System</h3>
+<p>Secure data management system.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="img8.png">
+<div class="project-info">
+<h3>Govt. Project</h3>
+<p>Crime Report management system.</p>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<section class="feedback" id="feedback">
+
+<h2>Testimonials</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+
+<h3>Yash - TestingXperts</h3>
+<div class="stars">★★★★★</div>
+<p>Hey Jividha,
+I go through your website that you made and 
+The website looks really impressive! The design is clean, smooth, and very user-friendly. Great work on making everything look so professional. Congratulations on the successful launch!</p>
+</div>
+
+<div class="testimonial">
+<h3>Vishwas Sehgal- Graphic Designer</h3>
+<div class="stars">★★★★★</div>
+<p>Hey! As a graphic design expert, I really appreciate your work. The eco-friendly website you created looks amazing. The design is clean, modern, and clearly reflects sustainability. Great job!</p>
+</div>
+
+<div class="testimonial">
+<h3>Tanisha Sharma - CA(Chartered Accountant)</h3>
+<div class="stars">★★★★★</div>
+<p>Hey! As a Chartered Accountant, I truly appreciate your work. The eco-friendly website you designed is impressive. The layout is clean, well-structured, and professionally presented. It communicates sustainability clearly while maintaining a strong and trustworthy business image. Great work!</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Me</h2>
+
+<p>Email: jividhagupta@gmail.com</p>
+<p>linkedin:jividha-gupta</p>
+
+</section>
+
+<div class="robot" onclick="toggleChat(event)">
+<video autoplay muted loop>
+<source src="robot_happy.webm">
+</video>
+</div>
+
+<div class="chatbot" id="chatbot">
+
+<div class="chat-body" id="chatBody">
+<div class="bot">
+Hello 👋 I'm Jividha's assistant.
+</div>
+</div>
+
+<div class="chat-questions">
+<button onclick="ask('services')">What services do you offer?</button>
+<button onclick="ask('experience')">What experience do you have?</button>
+<button onclick="ask('contact')">How can I contact you?</button>
+</div>
+
+</div>
+
+<script>
+
+const texts=[
+"AI Developer",
+"Frontend Developer",
+"Database Designer",
+"AI Chatbot Creator"
+]
+
+let count=0
+let index=0
+
+function type(){
+
+let current=texts[count]
+let letter=current.slice(0,++index)
+
+document.getElementById("typing").textContent=letter
+
+if(letter.length===current.length){
+
+setTimeout(()=>{
+index=0
+count++
+if(count===texts.length){count=0}
+type()
+},1500)
+
+}else{
+setTimeout(type,80)
+}
+
+}
+
+type()
+
+function toggleChat(e){
+
+e.stopPropagation()
+
+let chat=document.getElementById("chatbot")
+
+chat.style.display = chat.style.display==="block" ? "none" : "block"
+
+}
+
+function ask(type){
+
+let chat=document.getElementById("chatBody")
+
+let answers={
+services:"I provide AI development, web development, and database systems.",
+experience:"I build AI tools, web apps and data systems.",
+contact:"You can email me at jividha.dev@gmail.com."
+}
+
+chat.innerHTML+=`<div class="user">${type}</div>`
+chat.innerHTML+=`<div class="bot">${answers[type]}</div>`
+
+chat.scrollTop=chat.scrollHeight
+
+}
+
+</script>
+
+</body>
+</html>
